@@ -30,18 +30,19 @@ def handle_start(message):
    chat_id = message.chat.id 
    markup = telebot.types.ReplyKeyboardMarkup(True, False)
    markup.row("🔴🔴 To do the steps correctly, pay attention to the example below 🔴🔴\n👇🏻👇🏻 For example,type like this 👇🏻👇🏻")
-   markup.row('Food ProductName : 250g Grilled Chicken')
+   markup.row('Food Product Name : 250g Grilled Chicken')
    markup.row("📒 List of information 📒")
    bot.send_message(chat_id,'Hello 🙋🏻‍♂️\nwelcome to the Calories Info Bot👾', reply_markup=markup)
 "----------------------------------------------------------------------------------------------------------"
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
     message.text = message.text.lower()
-    if 'foodproductname:' in  message.text.replace(' ','') : 
+    if 'food product name' in  message.text : 
         try :
-            'foodproductname:' in  message.text.replace(' ','') 
+            query = message.text.replace('food product name','')
+			
         
-            querystring = {"query" : message.text.replace('food product name:','')}
+            querystring = {"query" : query.replace(":","")}
             headers = {
          "X-RapidAPI-Key": "API-Key",
          "X-RapidAPI-Host": "nutrition-by-api-ninjas.p.rapidapi.com"
@@ -52,7 +53,7 @@ def handle_text(message):
                 info1 = { }
                 info1 = info
                 info2 = json.loads(info1)   
-                bot.reply_to(message,"Name: " + str(info2["name"])+"\nServing Size : " + str(info2["serving size g"])+"g"+"\nCalories : " + str(info2["calories"])+'kcal'+"\nProtein : " + str(info2["protein g"])+'g'+"\nTotal Fat : " + str(info2["fat total g"])+'g'+"\nSaturated Fat : " + str(info2["fat saturated g"])+'g'+"\nTotal Carbohydrates : " + str(info2["carbohydrates total g"])+'g'+"\nFiber : " + str(info2["fiber g"])+'g'+"\nSugar : " + str(info2["sugar g"])+'g'+"\nSodium : " + str(info2["sodium mg"])+'mg'+"\nPotassium : " + str(info2["potassium mg"])+'mg'+"\nCholesterol: " + str(info2["cholesterol mg"])+'mg')
+                bot.reply_to(message,"Food Product Name : " + str(info2["name"])+"\nServing Size : " + str(info2["serving size g"])+"g"+"\nCalories : " + str(info2["calories"])+'kcal'+"\nProtein : " + str(info2["protein g"])+'g'+"\nTotal Fat : " + str(info2["fat total g"])+'g'+"\nSaturated Fat : " + str(info2["fat saturated g"])+'g'+"\nTotal Carbohydrates : " + str(info2["carbohydrates total g"])+'g'+"\nFiber : " + str(info2["fiber g"])+'g'+"\nSugar : " + str(info2["sugar g"])+'g'+"\nSodium : " + str(info2["sodium mg"])+'mg'+"\nPotassium : " + str(info2["potassium mg"])+'mg'+"\nCholesterol: " + str(info2["cholesterol mg"])+'mg')
         except :
             bot.reply_to(message,'🔴🔴 Make sure your sentence is spelled correctly 🔴🔴')    
     
@@ -77,7 +78,7 @@ def handle_text(message):
         chat_id = message.chat.id 
         markup = telebot.types.ReplyKeyboardMarkup(True, False)
         markup.row("🔴🔴 To do the steps correctly, pay attention to the example below 🔴🔴\n👇🏻👇🏻 For example,type like this 👇🏻👇🏻")
-        markup.row('Food ProductName : 250g Grilled Chicken')
+        markup.row('Food Product Name : 250g Grilled Chicken')
         markup.row("📒 List of information 📒")
         bot.send_message(chat_id,'Return to main page was successful ✅', reply_markup=markup)
     
