@@ -25,6 +25,7 @@ def handle_start(message):
 def handle_text(message):
     message.text = message.text.lower()
     if message.text == "👉🏻👉🏻 click here to start the english version for you 👈🏻👈🏻" : 
+        text = "`"+"Food Product Name : "+"`"
         chat_id = message.chat.id 
         markup = telebot.types.ReplyKeyboardMarkup(True, False)
         markup.row("🔴To do the steps correctly,pay attention to🔴\nthe example below")
@@ -32,7 +33,10 @@ def handle_text(message):
         markup.row("Food Product Name : 250g Grilled Chicken ")
         markup.row("📒 List of information 📒")
         markup.row("Return to version selection page 🔙")
-        bot.send_message(chat_id,'English version started successfully ✅', reply_markup=markup)
+        bot.send_message(chat_id,'English version started successfully ✅',reply_markup=markup) 
+        bot.send_message(chat_id,"🔴🔴 IMPORTANT 🔴🔴\nTo enter the name of the food product you want, click on the text below and add the name of the food product you want to the end of the text.",reply_markup=markup) 
+        bot.send_message(chat_id,text,parse_mode='MarkdownV2')      
+    
     elif 'food product name' in  message.text : 
         try :
             query = message.text.replace('food product name','')
@@ -71,6 +75,7 @@ def handle_text(message):
         bot.send_message(chat_id,'List of information opened successfully ✅', reply_markup=markup)
     
     elif message.text == 'return to main page ↩️' : 
+        text = "`"+"Food Product Name : "+"`"
         chat_id = message.chat.id 
         markup = telebot.types.ReplyKeyboardMarkup(True, False)
         markup.row("🔴To do the steps correctly,pay attention to🔴\nthe example below")
@@ -79,11 +84,15 @@ def handle_text(message):
         markup.row("📒 List of information 📒")
         markup.row("Return to version selection page 🔙")
         bot.send_message(chat_id,'Return to main page was successful ✅', reply_markup=markup)
+        bot.send_message(chat_id,"🔴🔴 IMPORTANT 🔴🔴\nTo enter the name of the food product you want, click on the text below and add the name of the food product you want to the end of the text.",reply_markup=markup) 
+        bot.send_message(chat_id,text,parse_mode='MarkdownV2')      
+    
     
     elif message.text in info_en : 
         bot.reply_to(message,info_en[message.text])
     
     elif message.text == '👈🏻👈🏻 اینجا را کلیک کنید تا نسخه فارسی برای شما شروع شود 👉🏻👉🏻' :
+        text2 = "`"+"نام محصول غذایی :"+"`"
         chat_id = message.chat.id 
         markup = telebot.types.ReplyKeyboardMarkup(True, False)
         markup.row("🔴برای انجام صحیح مراحل به مثال زیر توجه کنید🔴")
@@ -92,6 +101,8 @@ def handle_text(message):
         markup.row("📒 لیست اطلاعات 📒")
         markup.row("بازگشت به صفحه انتخاب نسخه 🔙")
         bot.send_message(chat_id,'نسخه فارسی با موفقیت شروع شد ✅', reply_markup=markup) 
+        bot.send_message(chat_id,"🔴🔴 مهم 🔴🔴\nبرای وارد کردن نام محصول غذایی مورد نظر خود بر روی متن زیر کلیک کنید و نام محصول غذایی مورد نظر خود را به انتهای متن اضافه کنید.")
+        bot.send_message(chat_id,text2,parse_mode='MarkdownV2')      
     
     elif 'نام محصول غذایی' in  message.text : 
         if 'نام محصول غذایی' in message.text:
@@ -155,6 +166,7 @@ def handle_text(message):
         bot.reply_to(message,info_fa[message.text]+("\nبرای ترجمه این متن انگلیسی آن را کپی کنید و روی آدرس این سایت کلیک کنید |translate.google.com/?sl=en&tl=fa&op=translate|  و آن متن را در قسمت انگلیسی قرار دهید و ترجمه آن را دریافت خواهید کرد. "))
 
     elif message.text =="بازگشت به صفحه اصلی ↩️":
+        text2 = "`"+"نام محصول غذایی :"+"`"
         chat_id = message.chat.id 
         markup = telebot.types.ReplyKeyboardMarkup(True, False)
         markup.row("🔴برای انجام صحیح مراحل به مثال زیر توجه کنید🔴")
@@ -163,6 +175,9 @@ def handle_text(message):
         markup.row("📒 لیست اطلاعات 📒")
         markup.row("بازگشت به صفحه انتخاب نسخه 🔙")
         bot.send_message(chat_id,'بازگشت به صفحه اصلی با موفقیت انجام شد ✅', reply_markup=markup) 
+        bot.send_message(chat_id,"🔴🔴 مهم 🔴🔴\nبرای وارد کردن نام محصول غذایی مورد نظر خود بر روی متن زیر کلیک کنید و نام محصول غذایی مورد نظر خود را به انتهای متن اضافه کنید.")
+        bot.send_message(chat_id,text2,parse_mode='MarkdownV2')      
+    
     
     elif message.text == "return to version selection page 🔙" : 
         chat_id = message.chat.id 
