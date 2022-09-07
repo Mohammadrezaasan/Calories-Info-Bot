@@ -4,7 +4,7 @@
 
 
 
-## <p align="center">A simple and convenient robot that tells you the weather with a few clicks <a href="https://t.me/tester_mohammadreza_asan1_bot">Weather Info Bot</a>.</p>
+## <p align="center">With a few simple clicks and entering the name of the food product you want, get the amount of calories, protein, total fat, saturated fat, total carbohydrate, fiber, sugar, sodium, potassium, cholesterol contained in the food product <a href="https://t.me/Calories_Info_Robot">Calories Info Bot</a>.</p>
 
 ## <p align="center">Bot API Source : <a href="https://www.weatherapi.com/">Weather Api</a>
 
