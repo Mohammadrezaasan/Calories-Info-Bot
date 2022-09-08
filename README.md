@@ -132,8 +132,10 @@ def handle_text(message):
 |:---:|------|
 |Food Product Name :|Saves the food product name.|
 |📒 List of information 📒|It shows a list of feeding table information that the bot gives you, which you can get answers to by clicking on any of the questions below.|
+
 ## List of information stored in the bot
-||
+
+|<p align="center"><img src="https://user-images.githubusercontent.com/108104864/189038358-1c07ee32-066f-4094-ae8c-00acd4694b01.gif" width="200" height="200"/>|
 |:---:|
 |Fruit Sugar Is Bad Or Good?|
 |Is Fructose A Natural Or Added Sugar?|
@@ -149,7 +151,8 @@ def handle_text(message):
 
 
  ## How does the bot respond to keywords?
- |<p align="center"><video src="https://user-images.githubusercontent.com/108104864/188339284-0438f705-3890-4321-bcb2-f0af97978fb6.MOV" width="250" height="500"/>|
+
+|<p align="center"><video src="https://user-images.githubusercontent.com/108104864/188339284-0438f705-3890-4321-bcb2-f0af97978fb6.MOV" width="250" height="500"/>|
 |:---:|
 |!!Keywords used in the video!!|
 |Food Product Name :|Saves the food product name.|
