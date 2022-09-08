@@ -12,13 +12,13 @@
 
 * [Getting started](#getting-started)
 
-* [List of information stored in the bot](#list-of-information-stored-in-the-bot)
-
 * [Next step](#next-step)
 	
 * [Codes docs](#codes-docs)
 	
 * [Keyword guide](#keyword-guide)
+
+* [List of information stored in the bot](#list-of-information-stored-in-the-bot)
 	
 * [How does the bot respond to keywords?](#how-does-the-bot-respond-to-keywords)
 
