@@ -8,19 +8,20 @@
 
 ## Contents
 
-* [Getting started](#getting-started)
+* [Getting started](#getting-started)  { شروع شدن }
 
-* [Next step](#next-step)
+* [Next step](#next-step)  { گام بعدی }
 	
-* [Codes docs](#codes-docs)
+* [Codes docs](#codes-docs)  { اسناد کدها }
 	
-* [Keyword guide](#keyword-guide)
+* [Keyword guide](#keyword-guide)  { راهنمای کلمات کلیدی }
 
-* [List of information stored in the bot](#list-of-information-stored-in-the-bot)
+* [List of information stored in the bot](#list-of-information-stored-in-the-bot)    { لیست اطلاعات ذخیره شده در ربات }
 	
-* [How does the bot respond to keywords?](#how-does-the-bot-respond-to-keywords)
+* [How does the bot respond to keywords?](#how-does-the-bot-respond-to-keywords)    { ربات چگونه به کلمات کلیدی پاسخ می دهد؟ }
 
 ## Getting started
+## شروع شدن
 
 
 * برای شروع پروژه، باید رباتی بسازیم که با کمک  <a href="https://t.me/BotFather">Bot Father</a> ساخته شده است
@@ -29,14 +30,15 @@
 ```
 bot = telebot.TeleBot(Token_bot)
 ```
- ## Next step
+## Next step
+ ## گام بعدی
  * برای دریافت اطلاعات مورد نیاز خود باید به سایت منبع درخواست دهید تا پس از درخواست اطلاعات مورد نیاز خود را دریافت کنید {در حال حاضر از منبع آماده و ویرایش شده سایت
 	<a href="https://rapidapi.com/calorieninjas/api/calorieninjas/">Rapid Api</a>  استفاده میکنم, چون زمان کمتری را تلف می کنید و کار شما را سریعتر می کند. }
  ```
  url = "https://nutrition-by-api-ninjas.p.rapidapi.com/v1/nutrition"
 ```
-  
-## Codes docs
+ ## Codes docs
+## اسناد کدها
 
 
 
@@ -126,13 +128,14 @@ def handle_text(message):
  
  * <a href="https://github.com/Mohammadrezaasan/Calories-Info-Bot/blob/main/calories_info_config.py">برای دریافت فایل کانفیگ اینجا کلیک کنید</a>
  ## Keyword guide
-	
+ ## راهنمای کلمات کلیدی
+
 |نام کلمات کلیدی|چه کاری می توانند انجام دهند؟|
 |:---:|------|
 | نام محصول غذایی : | . نام محصول غذایی را ذخیره می کند|
 |📒 لیست اطلاعات 📒|لیستی از اطلاعات جدول تغذیه که ربات به شما می دهد را نشان می دهد که با کلیک روی هر یک از سوالات زیر می توانید پاسخ آنها را دریافت کنید|
-	
 ## List of information stored in the bot
+## لیست اطلاعات ذخیره شده در ربات
 
 |<p align="center"><img src="https://user-images.githubusercontent.com/108104864/189038358-1c07ee32-066f-4094-ae8c-00acd4694b01.gif" width="200" height="200"/>|
 |:---:|
@@ -148,12 +151,12 @@ def handle_text(message):
 |پتاسیم چیست؟|
 |کلسترول چیست؟|
 
-
  ## How does the bot respond to keywords?
+ ## ربات چگونه به کلمات کلیدی پاسخ می دهد؟
 
 |<p align="center"><video src="https://user-images.githubusercontent.com/108104864/189472180-9323fef0-6063-439e-82af-e07ec53c3ef2.MP4" width="250" height="500"/>|
 |:---:|
-|!! کلیدواژه های استفاده شده در ویدیو !!|
+|!! کلمات کلیدی های استفاده شده در ویدیو !!|
 |نام محصول غذایی : |
 |📒 لیست اطلاعات 📒|
 
