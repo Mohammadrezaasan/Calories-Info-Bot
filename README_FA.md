@@ -23,15 +23,15 @@
 ## Getting started
 
 
-* To start the project, we need to build a robot that was built with the help of the <a href="https://t.me/BotFather">Bot Father</a> 
-
-* When your bot is built, the Bot Father will give you a token at the end { You put that token in the token variable in the config file } 
+* برای شروع پروژه، باید رباتی بسازیم که با کمک  <a href="https://t.me/BotFather">Bot Father</a> ساخته شده است
+* هنگامی که ربات شما ساخته شد، Bot Father در پایان یک توکن به شما می دهد { شما آن توکن را در متغیر توکن در فایل config قرار می دهید }
 
 ```
 bot = telebot.TeleBot(Token_bot)
 ```
  ## Next step
- * To get the information you need, you must apply to the source site to receive the information you need after the request { Currently, I am using the prepared and edited source of <a href="https://rapidapi.com/calorieninjas/api/calorieninjas/">Rapid Api</a> site because you waste less time and it makes your work faster. }
+ * برای دریافت اطلاعات مورد نیاز خود باید به سایت منبع درخواست دهید تا پس از درخواست اطلاعات مورد نیاز خود را دریافت کنید {در حال حاضر از منبع آماده و ویرایش شده سایت
+	<a href="https://rapidapi.com/calorieninjas/api/calorieninjas/">Rapid Api</a>  استفاده میکنم, چون زمان کمتری را تلف می کنید و کار شما را سریعتر می کند. }
  ```
  url = "https://nutrition-by-api-ninjas.p.rapidapi.com/v1/nutrition"
 ```
