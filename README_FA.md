@@ -40,9 +40,9 @@ bot = telebot.TeleBot(Token_bot)
 
 
 
-* The following code is related to the beginning part
+* کد زیر مربوط به قسمت شروع است
 ```
-# With the help of this part of the code, we start the desired version of the user
+# با کمک این قسمت کد، نسخه مورد نظر کاربر را شروع می کنیم
 @bot.message_handler(commands=['start'])
 def handle_start(message):
    chat_id = message.chat.id 
@@ -51,17 +51,18 @@ def handle_start(message):
    markup.row('👈🏻👈🏻 اینجا را کلیک کنید تا نسخه فارسی برای شما شروع شود 👉🏻👉🏻')
    bot.send_message(chat_id,'Hello 🙋🏻‍♂️\nwelcome to the Calories Info Bot👾\nسلام 🙋🏻‍♂️\nبه ربات اطلاعات کالری 👾 خوش آمدید', reply_markup=markup)
  ```
- * The code below is for the important part after the start part
+ * کد زیر مربوط به قسمت مهم, بعد از قسمت شروع است.
  ```
- @bot.message_handler(content_types=['text']) # We put the message handler = content_types=['text'] here { If the user enters any text, our function will be activated and after activation, it will check the conditions that we have written in the form of try, if, and elif inside that function to see if the text entered by the user matches our conditions. or not? , if it matches, it fulfills that condition. }
+ @bot.message_handler(content_types=['text']) # پیام handler = content_types=['text'] را اینجا قرار می دهیم { اگر کاربر متنی را وارد کند، تابع ما فعال می شود و پس از فعال سازی، شرایطی را که به صورت try، if و elif نوشته ایم بررسی می کند. در داخل آن تابع ببینید آیا متن وارد شده توسط کاربر با شرایط ما مطابقت دارد یا خیر ، اگر مطابقت داشته باشد، آن شرط را انجام می دهد. }
 def handle_text(message):
-    message.text = message.text.lower() # In this section, we convert all the messages entered by the user into lowercase letters so that they don't have problems, and we write our codes according to the standard.
+    message.text = message.text.lower() # در این قسمت تمامی پیام های وارد شده توسط کاربر را به حروف کوچک تبدیل می کنیم تا دچار مشکل نشوند و کدهای خود را طبق استاندارد می نویسیم.
  ```
- * The following code is used to get the food product name from the user { English version }
- ```
-    elif 'food product name' in  message.text : 
+* کد زیر برای دریافت نام محصول غذایی از کاربر استفاده می شود. { نسخه انگلیسی } 
+
+```
+	elif 'food product name' in  message.text : 
         try :
-	   # Here we edit the name of the food product entered by the user and set it equal to the value variable
+	   # در اینجا نام محصول غذایی وارد شده توسط کاربر را ویرایش کرده و آن را برابر با متغیر query قرار می دهیم .
             query = message.text.replace('food product name','') 
 			
         
@@ -70,7 +71,7 @@ def handle_text(message):
          "X-RapidAPI-Key": X_RapidAPI_Key,
          "X-RapidAPI-Host": "nutrition-by-api-ninjas.p.rapidapi.com"
         }
-	    # And in this section, after requesting the source site, we edit the information we need
+	    # و در این قسمت پس از درخواست به  سایت منبع، اطلاعات مورد نیاز خود را ویرایش می کنیم
             response = requests.request("GET", api, headers=headers, params=querystring)
             if  response.status_code == 200 :   
                 info = (response.text.replace("_"," ").strip("[ ]"))
@@ -83,11 +84,11 @@ def handle_text(message):
     
  ```
  
- * The following code is used to get the food product name from the user { Persian version }
+ * کد زیر برای دریافت نام محصول غذایی از کاربر استفاده می شود. { نسخه فارسی } 
  ```
  elif 'نام محصول غذایی' in  message.text : 
         if 'نام محصول غذایی' in message.text:
-    	    # In this section, with the help of Google Translate, we translate the name of the food product entered by the user into English and send it to the source site.
+    	    # در این قسمت با کمک گوگل ترنسلیت نام محصول غذایی وارد شده توسط کاربر را به انگلیسی ترجمه کرده و به سایت منبع ارسال می کنیم.
             name = message.text.replace("نام محصول غذایی","")
             payload = "source_language=fa&target_language=en&text="+name
             headers = {
@@ -121,39 +122,38 @@ def handle_text(message):
 
  ```
 
- * <a href="https://github.com/Mohammadrezaasan/Calories-Info-Bot/blob/main/Main.py">Click here to get the full code</a>
+ * <a href="https://github.com/Mohammadrezaasan/Calories-Info-Bot/blob/main/Main.py">برای دریافت کد کامل اینجا کلیک کنید</a>
  
- * <a href="https://github.com/Mohammadrezaasan/Calories-Info-Bot/blob/main/calories_info_config.py">Click here to get the config file</a>
+ * <a href="https://github.com/Mohammadrezaasan/Calories-Info-Bot/blob/main/calories_info_config.py">برای دریافت فایل کانفیگ اینجا کلیک کنید</a>
  ## Keyword guide
 	
-|Keyword names|What can they do?|
+|نام کلمات کلیدی|چه کاری می توانند انجام دهند؟|
 |:---:|------|
-|Food Product Name :|Saves the food product name.|
-|📒 List of information 📒|It shows a list of feeding table information that the bot gives you, which you can get answers to by clicking on any of the questions below.|
-
+| نام محصول غذایی : | . نام محصول غذایی را ذخیره می کند|
+|📒 لیست اطلاعات 📒|لیستی از اطلاعات جدول تغذیه که ربات به شما می دهد را نشان می دهد که با کلیک روی هر یک از سوالات زیر می توانید پاسخ آنها را دریافت کنید|
+	
 ## List of information stored in the bot
 
 |<p align="center"><img src="https://user-images.githubusercontent.com/108104864/189038358-1c07ee32-066f-4094-ae8c-00acd4694b01.gif" width="200" height="200"/>|
 |:---:|
-|Fruit Sugar Is Bad Or Good?|
-|Is Fructose A Natural Or Added Sugar?|
-|What Is Calories?|
-|What Is Protein?|
-|What Is Fat?'|
-|What Is Total Carbs?|
-|What Is Saturated Fat?|
-|What Is Dietary Fiber?|
-|What Is Sodium ?|
-|What Is Potassium ?|
-|What Is Cholesterol ?'|
+|قند میوه مضر است یا خوب؟|
+|آیا فروکتوز یک قند طبیعی است یا افزودنی؟|
+|کالری چیست؟|
+|پروتئین چیست؟|
+|چربی چیست؟|
+|کربوهیدرات کل چیست؟|
+|چربی اشباع چیست؟|
+|فیبر غذایی چیست؟|
+|سدیم چیست؟|
+|پتاسیم چیست؟|
+|کلسترول چیست؟|
 
 
  ## How does the bot respond to keywords?
 
 |<p align="center"><video src="https://user-images.githubusercontent.com/108104864/189472180-9323fef0-6063-439e-82af-e07ec53c3ef2.MP4" width="250" height="500"/>|
 |:---:|
-|!!Keywords used in the video!!|
-|Food Product Name :|Saves the food product name.|
-|📒 List of information 📒|It shows a list of feeding table information that the bot gives you, which you can get answers to by clicking on any of the questions below.|
-
+|!! کلیدواژه های استفاده شده در ویدیو !!|
+|نام محصول غذایی : |
+|📒 لیست اطلاعات 📒|
 
