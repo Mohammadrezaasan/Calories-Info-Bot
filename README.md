@@ -152,20 +152,9 @@ def handle_text(message):
 
  ## How does the bot respond to keywords?
 
-|<p align="center"><video src="https://user-images.githubusercontent.com/108104864/188339284-0438f705-3890-4321-bcb2-f0af97978fb6.MOV" width="250" height="500"/>|
+|<p align="center"><video src="https://user-images.githubusercontent.com/108104864/189472180-9323fef0-6063-439e-82af-e07ec53c3ef2.MP4" width="250" height="500"/>|
 |:---:|
 |!!Keywords used in the video!!|
 |Food Product Name :|Saves the food product name.|
 |📒 List of information 📒|It shows a list of feeding table information that the bot gives you, which you can get answers to by clicking on any of the questions below.|
 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
