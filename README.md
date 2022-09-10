@@ -1,7 +1,7 @@
 ![7CC975D7-0771-41D4-A30F-5F676ED1C7CF](https://user-images.githubusercontent.com/108104864/188773080-4df88b6d-957e-4b58-a86a-b2a2f628dc5d.jpeg)
 
 
-
+## <p align="center"> <a href="https://github.com/Mohammadrezaasan/Calories-Info-Bot/blob/main/README_FA.md">برای دریافت نسخه فارسی اینجا کلیک کنید </a></p>
 
 
 ## <p align="center">With a few simple clicks and entering the name of the food product you want, get the amount of calories, protein, total fat, saturated fat, total carbohydrate, fiber, sugar, sodium, potassium, cholesterol contained in the food product <a href="https://t.me/Calories_Info_Robot">Calories Info Bot</a>.</p>
