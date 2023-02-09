@@ -124,7 +124,7 @@ def handle_text(message):
 
  ```
 
- * <a href="https://github.com/Mohammadrezaasan/Calories-Info-Bot/blob/main/Main.py">برای دریافت کد کامل اینجا کلیک کنید</a>
+ * <a href="https://github.com/Mohammadrezaasan/Calories-Info-Bot/blob/main/Main.py">برای دریافت کامل کد اینجا کلیک کنید</a>
  
  * <a href="https://github.com/Mohammadrezaasan/Calories-Info-Bot/blob/main/calories_info_config.py">برای دریافت فایل کانفیگ اینجا کلیک کنید</a>
  ## Keyword guide
@@ -156,7 +156,7 @@ def handle_text(message):
 
 |<p align="center"><video src="https://user-images.githubusercontent.com/108104864/189500747-8e7c1bed-fdb8-4087-a5f8-939f8759dc53.MP4" width="250" height="500"/>|
 |:---:|
-|!! کلمات کلیدی های استفاده شده در ویدیو !!|
+|!! کلمات کلیدی استفاده شده در ویدیو !!|
 |نام محصول غذایی : |
 |📒 لیست اطلاعات 📒|
 
