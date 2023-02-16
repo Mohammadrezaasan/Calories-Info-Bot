@@ -112,7 +112,7 @@ def handle_text(message):
 
 
             tr_text = (tss.google(wyw_text, from_language, to_language))
-            # And in this section, like the English version, we edit the information we need
+            =
             try :
                 
                 querystring = {"query" : tr_text.replace(":","")}
