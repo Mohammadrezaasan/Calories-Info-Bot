@@ -1,3 +1,4 @@
+
 from turtle import title
 from telebot import TeleBot
 import telebot
@@ -7,24 +8,23 @@ from rsa import PublicKey
 import requests
 import json
 from decimal import *
-from config_calories_info_bot import*
+from calories_info_config import*
 "----------------------------------------------------------------------------------------------------------"
 bot = telebot.TeleBot(Token)
 api  = "https://nutrition-by-api-ninjas.p.rapidapi.com/v1/nutrition"
-url = "https://text-translator2.p.rapidapi.com/translate"
-"----------------------------------------------------------------------------------------------------------"
+"----------------------------------------------------------------------------"
 @bot.message_handler(commands=['start'])
 def handle_start(message):
    chat_id = message.chat.id 
    markup = telebot.types.ReplyKeyboardMarkup(True, False)
-   markup.row("👉🏻👉🏻 Click here to start the English version for you 👈🏻👈🏻")
-   markup.row('👈🏻👈🏻 اینجا را کلیک کنید تا نسخه فارسی برای شما شروع شود 👉🏻👉🏻')
+   markup.row("👉🏻👉🏻 Click to start the English version 👈🏻👈🏻")
+   markup.row('👈🏻👈🏻 کلیک کنید تا نسخه فارسی برای شما شروع شود 👉🏻👉🏻')
    bot.send_message(chat_id,'Hello 🙋🏻‍♂️\nwelcome to the Calories Info Bot👾\nسلام 🙋🏻‍♂️\nبه ربات اطلاعات کالری 👾 خوش آمدید', reply_markup=markup)
 "----------------------------------------------------------------------------------------------------------"
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
     message.text = message.text.lower()
-    if message.text == "👉🏻👉🏻 click here to start the english version for you 👈🏻👈🏻" : 
+    if message.text == "👉🏻👉🏻 click to start the english version 👈🏻👈🏻" : 
         text = "`"+"Food Product Name : "+"`"
         chat_id = message.chat.id 
         markup = telebot.types.ReplyKeyboardMarkup(True, False)
@@ -53,7 +53,7 @@ def handle_text(message):
                 info_calories_v2 = { }
                 info_calories_v2 = info_calories
                 final_calories_info = json.loads(info_calories_v2)   
-                bot.reply_to(message,"Food Product Name : " +str(final_calories_info['name'].title())+"\nServing Size : " + str(final_calories_info["serving size g"])+"g"+"\nCalories : " + str(final_calories_info["calories"])+'kcal'+"\nProtein : " + str(final_calories_info["protein g"])+'g'+"\nTotal Fat : " + str(final_calories_info["fat total g"])+'g'+"\nSaturated Fat : " + str(final_calories_info["fat saturated g"])+'g'+"\nTotal Carbohydrates : " + str(final_calories_info["carbohydrates total g"])+'g'+"\nFiber : " + str(final_calories_info["fiber g"])+'g'+"\nSugar : " + str(final_calories_info["sugar g"])+'g'+"\nSodium : " + str(final_calories_info["sodium mg"])+'mg'+"\nPotassium : " + str(final_calories_info["potassium mg"])+'mg'+"\nCholesterol: " + str(final_calories_info["cholesterol mg"])+'mg'+"\nNutritional information available at :"+query.replace(":","").title()+"\n-----------------------------------------------------------------------"+"\nsources : \nfdc.nal.usda.gov \nwww.nutritionix.com")
+                bot.reply_to(message,"Food Product Name : " +str(final_calories_info['name'].title())+"\n-----------------------------------------------------------------------"+"\nServing Size : " + str(final_calories_info["serving size g"])+"g"+"\n-----------------------------------------------------------------------"+"\nCalories : " + str(final_calories_info["calories"])+'kcal'+"\n-----------------------------------------------------------------------"+"\nProtein : " + str(final_calories_info["protein g"])+'g'+"\n-----------------------------------------------------------------------"+"\nTotal Fat : " + str(final_calories_info["fat total g"])+'g'+"\n-----------------------------------------------------------------------"+"\nSaturated Fat : " + str(final_calories_info["fat saturated g"])+'g'+"\n-----------------------------------------------------------------------"+"\nTotal Carbohydrates : " + str(final_calories_info["carbohydrates total g"])+'g'+"\n-----------------------------------------------------------------------"+"\nFiber : " + str(final_calories_info["fiber g"])+'g'+"\n-----------------------------------------------------------------------"+"\nSugar : " + str(final_calories_info["sugar g"])+'g'+"\n-----------------------------------------------------------------------"+"\nSodium : " + str(final_calories_info["sodium mg"])+'mg'+"\n-----------------------------------------------------------------------"+"\nPotassium : " + str(final_calories_info["potassium mg"])+'mg'+"\n-----------------------------------------------------------------------"+"\nCholesterol: " + str(final_calories_info["cholesterol mg"])+'mg'+"\n-----------------------------------------------------------------------"+"\nNutritional information available at :\n"+query.replace(":","").title()+"\n-----------------------------------------------------------------------"+"\nsources : \nfdc.nal.usda.gov \nwww.nutritionix.com")
         except :
             bot.reply_to(message,'🔴🔴 Make sure your sentence is spelled correctly 🔴🔴')    
     
@@ -91,7 +91,7 @@ def handle_text(message):
     elif message.text in info_en : 
         bot.reply_to(message,info_en[message.text])
     
-    elif message.text == '👈🏻👈🏻 اینجا را کلیک کنید تا نسخه فارسی برای شما شروع شود 👉🏻👉🏻' :
+    elif message.text == '👈🏻👈🏻 کلیک کنید تا نسخه فارسی برای شما شروع شود 👉🏻👉🏻' :
         text2 = "`"+"نام محصول غذایی :"+"`"
         chat_id = message.chat.id 
         markup = telebot.types.ReplyKeyboardMarkup(True, False)
@@ -108,16 +108,15 @@ def handle_text(message):
         if 'نام محصول غذایی' in message.text:
 
             food_tr = message.text.replace("نام محصول غذایی","")
-            payload = "source_language=fa&target_language=en&text="+food_tr
-            headers = {
-	     "content-type": "application/x-www-form-urlencoded",
-	     "X-RapidAPI-Key":X_RapidAPI_Key,
-	     "X-RapidAPI-Host": "text-translator2.p.rapidapi.com"
-         }
+            import translators as ts
+            import translators.server as tss
 
-            response_tr = requests.request("POST", url, data=payload.encode('utf-8'), headers=headers)
-            tr_text = json.loads(response_tr.text)
-            tr_text=tr_text['data']['translatedText']
+            wyw_text = food_tr
+
+            from_language, to_language = 'fa', 'en'
+
+
+            tr_text = (tss.google(wyw_text, from_language, to_language))
             try :
                 
                 
@@ -134,25 +133,19 @@ def handle_text(message):
                     info_calories_v2 = { }
                     info_calories_v2 = info_calories
                     final_calories_info = json.loads(info_calories_v2) 
-                    payload = "source_language=en&target_language=fa&text="+final_calories_info['name']
-                    headers = {
-                "content-type": "application/x-www-form-urlencoded",
-                "X-RapidAPI-Key":X_RapidAPI_Key,
-                "X-RapidAPI-Host": "text-translator2.p.rapidapi.com"
-                }
-                    response_tr = requests.request("POST", url, data=payload.encode('utf-8'), headers=headers)
-                    tr_text_fa = json.loads(response_tr.text)
-                    tr_text_fa = tr_text_fa['data']['translatedText']  
+                    wyw_text = final_calories_info['name']
+                    from_language, to_language = 'en', 'fa'
+                    tr_text_fa = (tss.google(wyw_text, from_language, to_language))
                     
-                    bot.reply_to(message,"نام محصول غذایی : " +tr_text_fa+"\nمقدار سرو کردن : " + str(final_calories_info["serving size g"])+"گرم"+"\nکالری : " + str(final_calories_info["calories"])+'کیلو کالری'+"\nپروتئین : " + str(final_calories_info["protein g"])+'گرم'+"\nچربی کل : " + str(final_calories_info["fat total g"])+'گرم'+"\nچربی های اشباع شده : " + str(final_calories_info["fat saturated g"])+'گرم'+"\nکربوهیدرات کل : " + str(final_calories_info["carbohydrates total g"])+'گرم'+"\nفیبر : " + str(final_calories_info["fiber g"])+'گرم'+"\nقند : " + str(final_calories_info["sugar g"])+'گرم'+"\nسدیم : " + str(final_calories_info["sodium mg"])+'میلی گرم'+"\nپتاسیم : " + str(final_calories_info["potassium mg"])+'میلی گرم'+"\nکلسترول : " + str(final_calories_info["cholesterol mg"])+'میلی گرم'+"\nاطلاعات تغذیه ای موجود در : "+tr_text_fa+"\n-----------------------------------------------------------------------"+"\nمنابع: \nfdc.nal.usda.gov\nwww.nutritionix.com")
+                    bot.reply_to(message,"نام محصول غذایی : " +tr_text_fa+"\n-----------------------------------------------------------------------"+"\nمقدار سرو کردن : " + str(final_calories_info["serving size g"])+"گرم"+"\n-----------------------------------------------------------------------"+"\nکالری : " + str(final_calories_info["calories"])+'کیلو کالری'+"\n-----------------------------------------------------------------------"+"\nپروتئین : " + str(final_calories_info["protein g"])+'گرم'+"\n-----------------------------------------------------------------------"+"\nچربی کل : " + str(final_calories_info["fat total g"])+'گرم'+"\n-----------------------------------------------------------------------"+"\nچربی های اشباع شده : " + str(final_calories_info["fat saturated g"])+'گرم'+"\n-----------------------------------------------------------------------"+"\nکربوهیدرات کل : " + str(final_calories_info["carbohydrates total g"])+'گرم'+"\n-----------------------------------------------------------------------"+"\nفیبر : " + str(final_calories_info["fiber g"])+'گرم'+"\n-----------------------------------------------------------------------"+"\nقند : " + str(final_calories_info["sugar g"])+'گرم'+"\n-----------------------------------------------------------------------"+"\nسدیم : " + str(final_calories_info["sodium mg"])+'میلی گرم'+"\n-----------------------------------------------------------------------"+"\nپتاسیم : " + str(final_calories_info["potassium mg"])+'میلی گرم'+"\n-----------------------------------------------------------------------"+"\nکلسترول : " + str(final_calories_info["cholesterol mg"])+'میلی گرم'+"\n-----------------------------------------------------------------------"+"\nاطلاعات تغذیه ای موجود در : \n"+tr_text_fa+"\n-----------------------------------------------------------------------"+"\nمنابع: \nfdc.nal.usda.gov\nwww.nutritionix.com")
             except :
                 bot.reply_to(message,"🔴🔴 مطمئن شوید که غلط املایی وجود ندارد 🔴🔴")    
 
     elif message.text == "بازگشت به صفحه انتخاب نسخه 🔙" :
         chat_id = message.chat.id 
         markup = telebot.types.ReplyKeyboardMarkup(True, False)
-        markup.row("👉🏻👉🏻 Click here to start the English version for you 👈🏻👈🏻")
-        markup.row('👈🏻👈🏻 اینجا را کلیک کنید تا نسخه فارسی برای شما شروع شود 👉🏻👉🏻')
+        markup.row("👉🏻👉🏻 Click to start the English version 👈🏻👈🏻")
+        markup.row('👈🏻👈🏻 کلیک کنید تا نسخه فارسی برای شما شروع شود 👉🏻👉🏻')
         bot.send_message(chat_id,'بازگشت به صفحه انتخاب نسخه با موفقیت انجام شد ✅', reply_markup=markup)
 
     elif message.text == '📒 لیست اطلاعات 📒' : 
@@ -193,8 +186,8 @@ def handle_text(message):
     elif message.text == "return to version selection page 🔙" : 
         chat_id = message.chat.id 
         markup = telebot.types.ReplyKeyboardMarkup(True, False)
-        markup.row("👉🏻👉🏻 Click here to start the English version for you 👈🏻👈🏻")
-        markup.row('👈🏻👈🏻 اینجا را کلیک کنید تا نسخه فارسی برای شما شروع شود 👉🏻👉🏻')
+        markup.row("👉🏻👉🏻 Click to start the English version 👈🏻👈🏻")
+        markup.row('👈🏻👈🏻 کلیک کنید تا نسخه فارسی برای شما شروع شود 👉🏻👉🏻')
         bot.send_message(chat_id,'Return to version selection page was successful ✅', reply_markup=markup)
 
 
