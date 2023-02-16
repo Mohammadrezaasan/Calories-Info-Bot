@@ -26,8 +26,18 @@ info_en = {
  'what is cholesterol ?' : "what is cholesterol ?\nIf you’re reading this, you probably care about your health and the role cholesterol can play. That’s an important first step.So, what is cholesterol? What does it do?Cholesterol is a waxy substance. It’s not inherently “bad.” Your body needs it to build cells and make vitamins and other hormones. But too much cholesterol can pose a problem.\nCholesterol comes from two sources. Your liver makes all the cholesterol you need. The remainder of the cholesterol in your body comes from foods from animals. For example, meat, poultry and dairy products all contain dietary cholesterol.\nThose same foods are high in saturated and trans fats. These fats cause your liver to make more cholesterol than it otherwise would. For some people, this added production means they go from a normal cholesterol level to one that’s unhealthy.\nSome tropical oils – such as palm oil, palm kernel oil and coconut oil – contain saturated fat that can increase bad cholesterol. These oils are often found in baked goods.\nWhy cholesterol matters\nCholesterol circulates in the blood. As the amount of cholesterol in your blood increases, so does the risk to your health. High cholesterol contributes to a higher risk of cardiovascular diseases, such as heart disease and stroke. That’s why it’s important to have your cholesterol tested, so you can know your levels.\nThe two types of cholesterol are: LDL cholesterol, which is bad, and HDL, which is good. Too much of the bad kind, or not enough of the good kind, increases the risk cholesterol will slowly build up in the inner walls of the arteries that feed the heart and brain.\nLearn more about LDL,DL and triglycerides.\nLDL (bad) cholesterol\nLDL cholesterol is considered the “bad” cholesterol, because it contributes to fatty buildups in arteries (atherosclerosis). This narrows the arteries and increases the risk for heart attack, stroke and peripheral artery disease (PAD).\nHDL (good) cholesterol\nHDL cholesterol can be thought of as the “good” cholesterol because a healthy level may protect against heart attack and stroke. \nHDL carries LDL (bad) cholesterol away from the arteries and back to the liver, where the LDL is broken down and passed from the body. But HDL cholesterol doesn't completely eliminate LDL cholesterol. Only one-third to one-fourth of blood cholesterol is carried by HDL.\nCholesterol can join with other substances to form a thick, hard deposit on the inside of the arteries. This can narrow the arteries and make them less flexible – a condition known as atherosclerosis. If a blood clot forms and blocks one of these narrowed arteries, a heart attack or stroke can result.\nhen it comes to cholesterol, remember: check, change and control. That is:\nCheck your cholesterol levels. It’s key to know your numbers and assess your risk.\nChange your diet and lifestyle to help improve your levels.Control your cholesterol, with help from your doctor if needed High cholesterol is one of the major controllable risk factors for coronary heart disease, heart attack and stroke. If you have other risk factors such as smoking, high blood pressure or diabetes, your risk increases even more.\n| sources  :  www.heart.org |"
 }
 
-
-"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 Token = ("Token")
 
 X_RapidAPI_Key = ("Token")
+
+
+"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+
+
+
+
+
+
+
+
+
